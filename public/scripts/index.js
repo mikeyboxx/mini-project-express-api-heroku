@@ -133,7 +133,7 @@ const submitDiagnostics = (submissionObj) => {
   })
     .then((response) => response.json())
     .then((data) => {  
-        
+        alert(data);
     })       
 }
 
@@ -157,6 +157,9 @@ const handleFormSubmit = (e) => {
 
   // Run the tip object through our validator function
   const submission = validateTip(newTip);
+  
+  // clear out text after each add of the tip
+  document.getElementById('tipText').innerHTML = '';
 
   // If the submission is valid, post the tip. Otherwise, handle the errors.
   return submission.isValid ? postTip(newTip) : submitDiagnostics(submission);

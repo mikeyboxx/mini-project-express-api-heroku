@@ -1,6 +1,6 @@
 const diagnostics = require('express').Router();
 const { v4: uuidv4 } = require('uuid');
-const { writeToFile } = require('../helpers/fsUtils');
+const { readAndAppend } = require('../helpers/fsUtils');
 const diagsArr = require('../db/diagnostics.json');
 const { fileURLToPath } = require('url');
 
@@ -25,15 +25,13 @@ diagnostics.post('/', (req, res) => {
     };
 
     diagsArr.push(newTip);
+    
+    readAndAppend(diagsArr, './db/diagnostics.json');
 
-    writeToFile('./db/diagnostics.json', diagsArr);
-
-    const response = {
+    return res.status(201).send({
         status: 'success',
         data: newTip
-    }
-    
-    res.status(201).send(response);
+    });
 });
 
 module.exports = diagnostics;

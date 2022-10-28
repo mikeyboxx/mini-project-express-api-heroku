@@ -22,5 +22,17 @@
         "tip": "give your flexbox children some width",
         "topic": "UX",
         "tip_id": "33129da4-fcac-4336-b6fc-f50ec0bedc6a"
+    },
+    {
+        "username": "mike",
+        "tip": "JQuery is an awesome tool",
+        "topic": "UX",
+        "tip_id": "a8adbc17-da81-4e0a-a35b-4228b03d6322"
+    },
+    {
+        "username": "mike",
+        "tip": "Insominia is sick!",
+        "topic": "UX",
+        "tip_id": "d523e400-3d90-4698-840b-31aaf1f56bc3"
     }
 ]
