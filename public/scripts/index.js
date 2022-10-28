@@ -134,7 +134,6 @@ const submitDiagnostics = (submissionObj) => {
     },
     body: JSON.stringify(errorStateObj),
   })
-    .then(response=> console.log(response))
     .catch((error) => {
         console.error('Error:', error);
     });    
