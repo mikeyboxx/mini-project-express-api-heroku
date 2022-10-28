@@ -23,10 +23,10 @@ diagnostics.post('/', (req, res) => {
         topic,
         tip
     };
-
+    console.log(newTip);
     diagsArr.push(newTip);
     
-    readAndAppend(JSON.stringify(diagsArr), './db/diagnostics.json');
+    readAndAppend(diagsArr, './db/diagnostics.json');
 
     return res.status(201).send({
         status: 'success',
